@@ -1,4 +1,4 @@
-
+'''
 import re
 
 
@@ -76,8 +76,8 @@ class MemoryManager:
         
         if block_start != None:
             self.allocator.allocate_memory(block_start, request_size, process)
-
 '''
+
 import re
 
 
@@ -102,4 +102,3 @@ class MemoryManager:
                 i += 1
 
         self.allocator.allocate_memory(block_start, request_size, process)
-'''

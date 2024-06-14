@@ -1,3 +1,4 @@
+
 import re
 
 
@@ -75,3 +76,30 @@ class MemoryManager:
         
         if block_start != None:
             self.allocator.allocate_memory(block_start, request_size, process)
+
+'''
+import re
+
+
+class MemoryManager:
+    def __init__(self, allocator):
+        self.allocator = allocator
+
+    def allocate(self, process, request_size):
+        memory_view = self.allocator.memory_view()
+
+        block_start = 0
+        i = 0
+        while i < 256:
+            if memory_view[i] is not None:
+                current_process = memory_view[i]
+                length = current_process.block
+                self.allocator.free_memory(current_process)
+                self.allocator.allocate_memory(block_start, length, current_process)
+                block_start += length
+                i += length
+            else:
+                i += 1
+
+        self.allocator.allocate_memory(block_start, request_size, process)
+'''
